@@ -1,3 +1,3 @@
 # control-repo
 
-This is a change.
+- [puppet] Resource Type Reference: https://puppet.com/docs/puppet/7/type.html

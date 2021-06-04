@@ -1,10 +1,13 @@
 class minecraft {
-  file {'/opt/minecraft':
+  $url = 'http://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar'
+  $install_dir = '/opt/minecraft'
+
+  file {$install_dir:
     ensure => directory,
   }
-  file {'/opt/minecraft/minecraft_server.jar':
+  file {"${install_dir}/minecraft_server.jar":
     ensure => file,
-    source => 'http://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar',
+    source => $url,
     before => Service['minecraft'],
   }
   package {'java':

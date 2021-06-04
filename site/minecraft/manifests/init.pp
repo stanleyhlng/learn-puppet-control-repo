@@ -2,7 +2,7 @@ class minecraft {
   file {'/opt/minecraft':
     ensure => directory,
   }
-  file {'/opt/mincraft/minecraft_server.jar':
+  file {'/opt/minecraft/minecraft_server.jar':
     ensure => file,
     source => 'http://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar',
   }
